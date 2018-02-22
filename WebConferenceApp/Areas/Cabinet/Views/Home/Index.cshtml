@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="w3-row">
+    <div class="w3-col l4">
+        @{ await Html.RenderPartialAsync("_UserInfo");}
+    </div>
+    <div class="w3-col l8">
+       @* @{ await Html.RenderPartialAsync("_Main")}*@
+    </div>
+</div>

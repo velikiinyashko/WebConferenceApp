@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using WebConferenceApp.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace WebConferenceApp
 {
@@ -22,6 +26,13 @@ namespace WebConferenceApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<BaseContext>(options => 
+            options.UseMySql(@"server=db.sibitproject.ru;user=test;password=37k6G1KaKILiDA1EV8Vu1OJiha2ob3;database=TestAppBuild;port=3306"));
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/cabinet/home/login");
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(120);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,11 +50,17 @@ namespace WebConferenceApp
 
             app.UseStaticFiles();
 
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                              name: "areas",
+                              template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                              name: "default",
+                              template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
