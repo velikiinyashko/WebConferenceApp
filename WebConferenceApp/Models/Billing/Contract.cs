@@ -15,7 +15,7 @@ namespace WebConferenceApp.Models.Billing
         public Guid Uid { get; set; }
         public DateTime CteateTime { get; set; }
         [Column(TypeName = "numeric(18,4)")]
-        public double Balance { get; set; }
+        public decimal Balance { get; set; }
 
         public List<Payment> Payments { get; set; }
 

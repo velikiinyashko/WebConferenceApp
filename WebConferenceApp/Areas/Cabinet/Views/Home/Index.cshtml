@@ -1,15 +1,42 @@
-﻿
+﻿@using WebConferenceApp.Models
+@model Account
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Index</h2>
-
 <div class="w3-row">
-    <div class="w3-col l4">
-        @{ await Html.RenderPartialAsync("_UserInfo");}
+    <h2 class="w3-center">Личный кабинет</h2>
+    <div class="w3-col l3">
+        <div class="w3-green">
+
+            <div class="w3-container">
+                <div class="w3-image">
+
+                </div>
+                <div class="w3-container w3-center">
+                    @if (Model != null)
+                    {
+                        <br />
+                        <div class=" w3-card-4">
+                            <label><i class="fa fa-user"></i> @User.Identity.Name</label>
+                        </div>
+                        <br />
+                        <div class="w3-card-4">
+                            <label><i class="fas fa-ruble-sign"></i> @Model.Contract.Balance</label>
+                        </div>
+                        <br />
+                        <div class="w3-card-4">
+                            <label><i class="far fa-credit-card"></i> @Model.Contract.Uid</label>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <br />
+            <a asp-action="createroom" asp-controller="home" asp-area="cabinet" class="w3-button w3-red w3-block">Создать лекцию</a>
+        </div>
+
     </div>
-    <div class="w3-col l8">
-       @* @{ await Html.RenderPartialAsync("_Main")}*@
+
+    <div class="w3-col l9">
     </div>
 </div>

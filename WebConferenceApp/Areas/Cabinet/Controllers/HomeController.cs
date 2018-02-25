@@ -27,12 +27,19 @@ namespace copts.Areas.cabinet.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Index(int? Id)
+        public async Task<IActionResult> Index(string Name)
         {
+            string UserName = HttpContext.User.Identity.Name.ToString();
             Account user = await _context.Accounts
+                .Include(c => c.Contract)
+                .Include(r => r.Rooms)
                 .Include(u => u.Role)
-                .FirstOrDefaultAsync(u => u.Id == Id);
-            return View(user);
+                .FirstOrDefaultAsync(u => u.Name == Name);
+            if(user != null)
+            {
+                return View(user);
+            }
+            return View();
         }
 
         [HttpGet]
@@ -89,11 +96,11 @@ namespace copts.Areas.cabinet.Controllers
                     _context.Accounts.Add(user);
                     await _context.SaveChangesAsync();
 
-                    await Authenticate(user);
+                    await GetCookie(user);
 
                     return RedirectToAction("index");
                 }
-                    ModelState.AddModelError("", "Не корректные логин и(или) пароль");
+                ModelState.AddModelError("", "Не корректные логин и(или) пароль");
             }
             return View(register);
         }
@@ -104,12 +111,51 @@ namespace copts.Areas.cabinet.Controllers
             return RedirectToAction("index");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> CreateRoom()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateRoom(Room room)
+        {
+            if (ModelState.IsValid)
+            {
+                Room rooms = await _context.Rooms.FirstOrDefaultAsync(r => r.Name == room.Name);
+                if(rooms != null)
+                {
+                    await _context.Rooms.AddAsync(room);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("index", "home", "cabinet");
+                }
+            }
+            return View(room);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditRoom()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditRoom(int? Id)
+        {
+
+            return View();
+        }
+
+        public async Task<IActionResult> DeleteRoom()
+        {
+            return View();
+        }
 
         private async Task GetCookie(Account account)
         {
             var Claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, account.Name),
+                new Claim(ClaimTypes.Name, account.Login),
                 new Claim(ClaimTypes.Role, account.Role?.Name),
                 new Claim(ClaimTypes.Email, account.Email)
             };
@@ -122,21 +168,6 @@ namespace copts.Areas.cabinet.Controllers
             };
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(ClaimsIdentity), AuthProperties);
-        }
-
-        private async Task Authenticate(Account user)
-        {
-            // создаем один claim
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role?.Name)
-            };
-            // создаем объект ClaimsIdentity
-            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType,
-                ClaimsIdentity.DefaultRoleClaimType);
-            // установка аутентификационных куки
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
         public string HashMD5(string text)

@@ -6,10 +6,12 @@
     <title>@ViewData["Title"] - Title</title>
 
     <link rel="stylesheet" href="~/css/w3.css" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 <body>
     <div class="w3-bar w3-grey">
-        <a href="#" class="w3-bar-item w3-button">test</a>
+        <a asp-action="index" asp-controller="home" class="w3-bar-item w3-button">main</a>
+        <a asp-action="logout" asp-controller="home" asp-area="cabinet" class="w3-bar-item w3-button w3-hover-red w3-right">Выход</a>
     </div>
 
     @RenderBody()

@@ -14,20 +14,19 @@
     <div class="w3-col l4 s12 w3-center">
         <div class="w3-card-4">
 
-            <div class="w3-container">
+            <div class="w3-container w3-green">
                 <h2>Вход</h2>
             </div>
+            <br />
             <form asp-action="login" asp-controller="home" asp-area="cabinet" asp-anti-forgery="true">
                 <span class="validation" asp-validation-summary="ModelOnly"></span>
                 <div class="w3-container">
                     <span asp-validation-for="Login"></span>
-                    <input asp-for="Login" class="w3-input" />
-                    <label asp-for="Login">Пользователь</label>
+                    <input asp-for="Login" class="w3-input" placeholder="Имя пользователя"/>
                 </div>
                 <div class="w3-container">
                     <span asp-validation-for="Password"></span>
-                    <input asp-for="Password" class="w3-input" />
-                    <label asp-for="Password">Пароль</label>
+                    <input asp-for="Password" class="w3-input" placeholder="Пароль"/>
                 </div>
                 <br />
                     <button type="submit" class="w3-button w3-green w3-block">Войти</button>
