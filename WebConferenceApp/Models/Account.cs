@@ -25,6 +25,8 @@ namespace WebConferenceApp.Models
         
         public Avatar Avatar { get; set; }
 
+        public Subsrube Subsrube { get; set; }
+
         public List<AccountTags> AccountTags { get; set; }
 
         public int? RoleId { get; set; }

@@ -16,8 +16,6 @@
             <h2 class="w3-red w3-center">Создание комнаты</h2>
 
             <form asp-action="CreateRoom" asp-controller="home" asp-area="cabinet" asp-anti-forgery="true">
-                <input asp-for="AccountId" value="@Model.Account.Id" />
-                <input asp-for="StatusId" value="1" />
                 <input class="w3-input" asp-for="Name" placeholder="Название" />
                 <input class="w3-input" asp-for="BegTime" placeholder="Время" />
                 

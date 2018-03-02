@@ -32,6 +32,7 @@ namespace WebConferenceApp.Models
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Room> Rooms { get; set; }
+        public DbSet<Subsrube> Subscrubes { get; set; }
         public DbSet<Status> Status { get; set; }
         public DbSet<Company> Companys { get; set; }
         public DbSet<TypeAccount> TypeAccounts { get; set; }

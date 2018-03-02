@@ -35,7 +35,7 @@ namespace copts.Areas.cabinet.Controllers
                 .Include(r => r.Rooms)
                 .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.Name == Name);
-            if(user != null)
+            if (user != null)
             {
                 return View(user);
             }
@@ -122,10 +122,26 @@ namespace copts.Areas.cabinet.Controllers
         {
             if (ModelState.IsValid)
             {
-                Room rooms = await _context.Rooms.FirstOrDefaultAsync(r => r.Name == room.Name);
-                if(rooms != null)
+                Room rooms = await _context.Rooms
+                    .Include(s => s.Status)
+                    .Include(a => a.Account)
+                    .FirstOrDefaultAsync(r => r.Name == room.Name);
+                if (rooms == null)
                 {
-                    await _context.Rooms.AddAsync(room);
+                    Account account = await _context.Accounts
+                        .Include(r => r.Role)
+                        .Include(c => c.Contract)
+                        .Include(r => r.Rooms)
+                        .FirstOrDefaultAsync(u => u.Login == HttpContext.User.Identity.Name);
+                    await _context.Rooms.AddAsync(new Room
+                    {
+                        Name = room.Name,
+                        AccountId = account.Id,
+                        CreateDate = DateTime.Now,
+                        BegTime = room.BegTime,
+                        StatusId = 1,
+
+                    });
                     await _context.SaveChangesAsync();
                     return RedirectToAction("index", "home", "cabinet");
                 }
@@ -134,21 +150,75 @@ namespace copts.Areas.cabinet.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> EditRoom()
+        public async Task<IActionResult> EditRoom(int? Id)
         {
-            return View();
+            if (Id != null)
+            {
+                Room room = await _context.Rooms
+                    .Include(a => a.Account)
+                    .Include(r => r.Status)
+                    .FirstOrDefaultAsync(r => r.Id == Id);
+                if (room != null)
+                {
+                    if (room.Account.Login == HttpContext.User.Identity.Name)
+                    {
+                        return View(room);
+                    }
+                    return NotFound();
+                }
+                return NotFound();
+            }
+            return NotFound();
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditRoom(int? Id)
+        public async Task<IActionResult> EditRoom(Room room)
         {
 
             return View();
         }
 
-        public async Task<IActionResult> DeleteRoom()
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> ViewRoom(int? Id)
         {
-            return View();
+            if (Id != null)
+            {
+                Room room = await _context.Rooms
+                    .Include(a => a.Account)
+                    .Include(r => r.Status)
+                    .FirstOrDefaultAsync(r => r.Id == Id);
+                if (room != null)
+                {
+                    return View(room);
+                }
+                return NotFound();
+            }
+            return NotFound();
+        }
+
+        [Authorize]
+        public async Task<IActionResult> DeleteRoom(int? Id)
+        {
+            if (Id != null)
+            {
+                Room room = await _context.Rooms
+                    .Include(a => a.Account)
+                    .Include(s => s.Status)
+                    .FirstOrDefaultAsync(i => i.Id == Id);
+                if (room != null)
+                {
+                    if (room.Account.Login == HttpContext.User.Identity.Name)
+                    {
+                        _context.Rooms.Remove(room);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction("index");
+                    }
+                    return NotFound();
+                }
+                return NotFound();
+            }
+            return NotFound();
         }
 
         private async Task GetCookie(Account account)
