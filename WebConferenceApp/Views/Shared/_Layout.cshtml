@@ -6,14 +6,15 @@
     <title>@ViewData["Title"] - WebConferenceApp</title>
     <link rel="stylesheet" href="~/css/w3.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
-<body>
-    @{ await Html.RenderPartialAsync("_Menu");}
-    <div class="container body-content">
+<body class="w3-light-gray">
+    <div class="w3-content" style="max-width:2048px;">
+        @{ await Html.RenderPartialAsync("_Menu");}
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - WebConferenceApp</p>
+            <p>&copy; 2018 - SibItProject</p>
         </footer>
     </div>
 

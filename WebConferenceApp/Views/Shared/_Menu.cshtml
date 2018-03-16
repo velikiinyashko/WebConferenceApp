@@ -1,5 +1,6 @@
 ﻿<div class="w3-bar w3-dark-gray w3-top">
     <a class="w3-bar-item w3-button" href="#">test</a>
+
     @if (User.Identity.IsAuthenticated)
     {
         <a class="w3-bar-item w3-button w3-hover-red w3-right" asp-action="logout" asp-controller="home" asp-area="cabinet">Выход</a>
@@ -10,4 +11,8 @@
         <a class="w3-bar-item w3-button w3-hover-red w3-right" asp-action="registration" asp-controller="home" asp-area="cabinet">Регистрация</a>
         <a class="w3-bar-item w3-button w3-hover-red w3-right" asp-action="login" asp-controller="home" asp-area="cabinet">Вход</a>
     }
+    <i class="w3-bar-item"> </i>
+    <a href="#" class="w3-bar-item w3-button w3-green w3-right"><i class="fas fa-search"></i></a>
+    <input type="text" class="w3-bar-item w3-input w3-right" placeholder="Search" />
+
 </div>
