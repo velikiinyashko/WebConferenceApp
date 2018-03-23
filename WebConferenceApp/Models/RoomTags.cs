@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace WebConferenceApp.Models
 {
-    public class AccountTags
+    public class RoomTags
     {
-        public int? AccountId { get; set; }
-        public Account Account { get; set; }
+        public int? RoomId { get; set; }
+        public Room Room { get; set; }
 
         public int? TagsId { get; set; }
         public Tags Tags { get; set; }
-
     }
 }

@@ -27,6 +27,21 @@ namespace WebConferenceApp.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Viewer()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> Roomdetails()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> Recordpage()
+        {
+            return View();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

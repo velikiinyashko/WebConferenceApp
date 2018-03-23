@@ -11,10 +11,12 @@ namespace WebConferenceApp.Models
         public string Name { get; set; }
 
         public List<AccountTags> AccountTags { get; set; }
+        public List<RoomTags> RoomTags { get; set; }
 
         public Tags()
         {
             AccountTags = new List<AccountTags>();
+            RoomTags = new List<RoomTags>();
         }
     }
 }

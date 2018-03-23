@@ -18,15 +18,28 @@ namespace WebConferenceApp.Models
             modelBuilder.Entity<AccountTags>()
                 .HasKey(t => new { t.AccountId, t.TagsId });
 
+            modelBuilder.Entity<RoomTags>()
+                .HasKey(t => new { t.RoomId, t.TagsId });
+
             modelBuilder.Entity<AccountTags>()
                 .HasOne(at => at.Account)
                 .WithMany(a => a.AccountTags)
                 .HasForeignKey(at => at.AccountId);
 
+            modelBuilder.Entity<RoomTags>()
+                .HasOne(r => r.Room)
+                .WithMany(rt => rt.RoomTags)
+                .HasForeignKey(ri => ri.RoomId);
+
             modelBuilder.Entity<AccountTags>()
                 .HasOne(at => at.Tags)
                 .WithMany(a => a.AccountTags)
                 .HasForeignKey(at => at.TagsId);
+
+            modelBuilder.Entity<RoomTags>()
+                .HasOne(r => r.Tags)
+                .WithMany(rt => rt.RoomTags)
+                .HasForeignKey(rt => rt.TagsId);
         }
 
         public DbSet<Account> Accounts { get; set; }

@@ -16,7 +16,14 @@ namespace WebConferenceApp.Models
         public int? AccountId { get; set; }
         public Account Account { get; set; }
 
+        public List<RoomTags> RoomTags { get; set; }
+
         public int? StatusId { get; set; }
         public Status Status { get; set; }
+
+        public Room()
+        {
+            RoomTags = new List<RoomTags>();
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<div class="w3-bar w3-dark-gray w3-top">
-    <a class="w3-bar-item w3-button" href="#">test</a>
+    <a class="w3-bar-item w3-button" asp-action="index" asp-controller="home">Главная</a>
 
     @if (User.Identity.IsAuthenticated)
     {
@@ -13,6 +13,6 @@
     }
     <i class="w3-bar-item"> </i>
     <a href="#" class="w3-bar-item w3-button w3-green w3-right"><i class="fas fa-search"></i></a>
-    <input type="text" class="w3-bar-item w3-input w3-right" placeholder="Search" />
+    <input type="text" class="w3-bar-item w3-input w3-right" placeholder="Поиск" />
 
 </div>
