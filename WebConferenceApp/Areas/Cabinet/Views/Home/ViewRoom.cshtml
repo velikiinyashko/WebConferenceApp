@@ -19,7 +19,9 @@
     <div class="w3-col l6">
         <div class="w3-container w3-center">
             <div id="container">
-                <video id="gum-local" autoplay playsinline></video>
+                <button class="w3-button w3-block w3-green" id="startButton">Запустить трансляцию</button>
+                <button class="w3-button w3-block w3-red" id="callButton">test</button>
+                <video id="videoStream" autoplay muted></video>
 
                 <div id="errorMsg"></div>
             </div>
@@ -32,3 +34,4 @@
         <button class="w3-button w3-block w3-red">Отправить</button>
     </div>
 </div>
+<button id="callButton" hidden></button>

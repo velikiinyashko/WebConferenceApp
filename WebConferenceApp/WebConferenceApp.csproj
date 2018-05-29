@@ -20,6 +20,7 @@
     <Folder Include="Areas\Cabinet\Models\" />
     <Folder Include="Areas\Installer\Data\" />
     <Folder Include="Areas\Installer\Models\" />
+    <Folder Include="wwwroot\js\Новая папка\" />
   </ItemGroup>
 
 </Project>

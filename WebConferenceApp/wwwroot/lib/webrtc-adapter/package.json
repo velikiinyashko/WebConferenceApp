@@ -1,6 +1,6 @@
 {
   "name": "webrtc-adapter",
-  "version": "6.1.4",
+  "version": "6.1.5",
   "description": "A shim to insulate apps from WebRTC spec changes and browser prefix differences",
   "license": "BSD-3-Clause",
   "main": "./src/js/adapter_core.js",
@@ -19,7 +19,7 @@
     "test": "grunt && grunt downloadBrowser && mocha test/unit && karma start test/karma.conf.js"
   },
   "dependencies": {
-    "rtcpeerconnection-shim": "^1.2.9",
+    "rtcpeerconnection-shim": "^1.2.10",
     "sdp": "^2.7.0"
   },
   "engines": {

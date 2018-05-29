@@ -5,9 +5,11 @@
     "jQuery": "3.3.1",
     "bootstrap": "v4.0.0",
     "jquery-validation": "1.17.0",
-    "webrtc-adapter": "v6.1.4"
+    "webrtc-adapter": "v6.1.5",
+    "socket.io": "2.1.0"
   },
   "resolutions": {
-    "bootstrap": "v4.0.0"
+    "bootstrap": "v4.0.0",
+    "webrtc-adapter": "v6.1.5"
   }
 }

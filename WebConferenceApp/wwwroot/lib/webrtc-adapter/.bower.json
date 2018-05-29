@@ -29,15 +29,15 @@
     "Shim"
   ],
   "homepage": "https://github.com/webrtc/adapter",
-  "version": "6.1.4",
-  "_release": "6.1.4",
+  "version": "6.1.5",
+  "_release": "6.1.5",
   "_resolution": {
     "type": "version",
-    "tag": "v6.1.4",
-    "commit": "8260e230e824036ee312717b253f93f27aa3ac28"
+    "tag": "v6.1.5",
+    "commit": "25a6b5a677486562cc9c8e3aaf724c31697c4027"
   },
   "_source": "https://github.com/webrtc/adapter.git",
-  "_target": "v6.1.4",
+  "_target": "v6.1.5",
   "_originalSource": "webrtc-adapter",
   "_direct": true
 }
