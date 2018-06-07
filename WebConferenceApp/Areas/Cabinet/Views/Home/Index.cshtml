@@ -9,10 +9,8 @@
         <div class="w3-container">
             <div class="w3-card-4">
                 <div class="w3-green">
-
                     <div class="w3-container">
                         <div class="w3-image">
-
                         </div>
                         <div class="w3-container w3-center">
                             @if (Model != null)
@@ -33,8 +31,8 @@
                             }
                         </div>
                     </div>
-                    <br />
-                    <a asp-action="createroom" asp-controller="home" asp-area="cabinet" class="w3-button w3-red w3-block">Создать лекцию</a>
+                    <br />                    
+                    <a  asp-action="createroom" asp-controller="home" asp-area="cabinet" class="w3-button w3-red w3-block">Создать лекцию</a>
                 </div>
             </div>
         </div>
@@ -43,19 +41,22 @@
     <div class="w3-col l9">
         <div class="w3-container">
             <div class="w3-card-4">
-                <table class="w3-table w3-center">
+
+                <table class="w3-table w3-center" id="tableLectures">
                     <thead>
                         <tr class="w3-red">
-                            <td>
+                            <td onclick="sortTable(0)">
                                 <label>Номер лекции</label>
                             </td>
-                            <td>
+                            <td onclick="sortTable(1)">
                                 <label>Название лекции</label>
                             </td>
-                            <td>
+                            <td onclick="sortTable(2)">
                                 <label>Дата начала</label>
                             </td>
-                            <td></td>
+                            <td>
+                                <input class="w3-input" id="strForSearch" type="text" placeholder="Поиск.."onkeyup="searchTheme()">
+                            </td>
                         </tr>
                     </thead>
                     <tbody>
