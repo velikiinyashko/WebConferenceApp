@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
-<body class="w3-light-gray">
+<body>
     <div class="w3-content" style="max-width:2048px;">
         @{ await Html.RenderPartialAsync("_Menu");}
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2018 - SibItProject</p>
+        <footer class="footer-bar monochrome-c2">
+            @*<p class="w3-text-white">&copy; 2018 - SibItProject</p>*@
         </footer>
     </div>
 

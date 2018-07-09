@@ -6,20 +6,41 @@
     <title>@ViewData["Title"] - Title</title>
 
     <link rel="stylesheet" href="~/css/w3.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 <body>
-    <div class="w3-bar w3-grey">
-        <a asp-action="index" asp-controller="home" class="w3-bar-item w3-button w3-hover-red">Главная</a>
-        <a asp-action="logout" asp-controller="home" asp-area="cabinet" class="w3-bar-item w3-button w3-hover-red w3-right">Выход</a>
+    <div class="w3-content" style="max-width: 2048px;">
+        <div class="main-bar monochrome-c2">
+            <a href="#" class="" style="font-family: Rubik; font-size: 30px; color: white; margin: 5px 46px; display: inline-block;">Speaklis</a>
+            @*<a asp-action="index" asp-controller="home" class="w3-bar-item w3-button w3-hover-red">Главная</a>
+            <a asp-action="logout" asp-controller="home" asp-area="cabinet" class="w3-bar-item w3-button w3-hover-red w3-right">Выход</a>*@
+        </div>
+
+        @RenderBody()
+
+        <footer class="footer-bar monochrome-c2">
+            <div class="w3-row">
+                <div class="w3-col l6 s6 m6">
+                    <p> </p>
+                </div>
+                <div class="w3-col l6 s6 m6">
+                    <a class="footer-link" href="#">Помощь</a>
+                    <a class="footer-link" href="#">Отзывы</a>
+                    <a class="footer-link" href="#">О проекте</a>
+                    <a class="footer-link" href="#">Лицензия</a>
+                    <a class="footer-link" href="#">Стать партнёром</a>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    @RenderBody()
-
-    <footer></footer>
     <script src="~/lib/webrtc-adapter/release/adapter.js"></script>
     <script src="~/js/main.js"></script>
-    <script src="~/lib/jQuery/dist/jquery.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    @*<script src="~/lib/jQuery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
 </body>
 </html>

@@ -21,6 +21,7 @@
     <Folder Include="Areas\Installer\Data\" />
     <Folder Include="Areas\Installer\Models\" />
     <Folder Include="wwwroot\js\Новая папка\" />
+    <Folder Include="wwwroot\fonts\" />
   </ItemGroup>
 
 </Project>

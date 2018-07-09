@@ -11,30 +11,40 @@
     <div class="w3-col l4 w3-center">
         <p></p>
     </div>
-    <div class="w3-col l4 s12 w3-center">
-        <div class="w3-card-4">
+    <div class="w3-col l4 s12>
+        <div class="login-block w3-left">
 
-            <div class="w3-container w3-green">
-                <h2>Вход</h2>
+            <div class="w3-row">
+                <div class="w3-col l6 m6 s6">
+                    <h2 style="text-decoration: underline; font-family: Rubik">Войти</h2>
+                </div>
+                <div class="w3-col l6 m6 s6">
+                    <a href="#"><i class="fab fa-facebook fa-3x w3-right" style="color: #00CC5F; padding: 10px;"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-square fa-3x w3-right" style="color: #00CC5F; padding: 10px;"></i></a>
+                    <a href="#"><i class="fab fa-vk fa-3x w3-right" style="color: #00CC5F; padding: 10px;"></i></a>
+                </div>
             </div>
-            <br />
             <form asp-action="login" asp-controller="home" asp-area="cabinet" asp-anti-forgery="true">
                 <span class="validation" asp-validation-summary="ModelOnly"></span>
-                <div class="w3-container">
+                <div class="sib-container">
                     <span asp-validation-for="Login"></span>
-                    <input asp-for="Login" class="w3-input" placeholder="Имя пользователя"/>
+                    <label class="">Email</label>
+                    <input asp-for="Login" class="w3-left" placeholder="Введите email" />
                 </div>
-                <div class="w3-container">
+                <div class="sib-container">
                     <span asp-validation-for="Password"></span>
-                    <input asp-for="Password" class="w3-input" placeholder="Пароль"/>
+                    <label class="">Пароль</label>
+                    <input type="password" asp-for="Password" class="" placeholder="Введите пароль" />
                 </div>
-                <br />
-                    <button type="submit" class="w3-button w3-green w3-block">Войти</button>
+                <div class="sib-container">
+                    <button type="submit" class="button-border w3-left">войти</button>
+                </div>
             </form>
         </div>
+    </div>
 
-    </div>
-    <div class="w3-col l4 w3-center">
-        <p></p>
-    </div>
+</div>
+<div class="w3-col l4 w3-center">
+    <p></p>
+</div>
 </div>
