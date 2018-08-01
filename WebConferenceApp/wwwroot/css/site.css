@@ -1,25 +1,25 @@
-﻿@font-face{
+﻿@font-face {
     font-family: 'Rubik';
     src: url('../fonts/Rubik-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face{
+@font-face {
     font-family: 'Rubik';
     src: url('../fonts/Rubik-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
-@font-face{
+@font-face {
     font-family: 'Rubik';
     src: url('../fonts/Rubik-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
-@font-face{
+@font-face {
     font-family: 'Istok';
     src: url('../fonts/IstokWeb-Regular.ttf') format('truetype');
     font-weight: normal;
@@ -30,20 +30,26 @@
     margin: auto;
 }
 
+* {
+    box-sizing: border-box;
+    font-family: Rubik;
+    line-height: normal;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-body{
-    font : normal 100% Rubik;
+body {
+    font: normal 100% Rubik;
 }
 
-body{
+body {
     background-color: #f9f9f9;
 }
 
-.main-bar{
+.main-bar {
     position: fixed;
     top: 0;
     display: block;
@@ -59,15 +65,12 @@ body{
 
 
 
-.footer-bar{
-    position: fixed;
-    bottom: 0;
+.footer-bar {
+    left: 0px;
+    bottom: 0px;
     display: block;
     width: 100%;
     height: 60px;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
     /*background-color: #1a1b1b;*/
 }
 
@@ -104,32 +107,32 @@ body{
 
 /* set main color */
 
-.light-shade, .light-hover-shade:hover{
+.light-shade, .light-hover-shade:hover {
     color: #f9f9f9;
     background-color: #f9f9f9;
 }
 
-.light-accent, .light-hover-accent:hover{
+.light-accent, .light-hover-accent:hover {
     color: #19eb7b;
     background-color: #19eb7b;
 }
 
-.base-brand, .base-hover-brand:hover{
+.base-brand, .base-hover-brand:hover {
     color: #00cc5f;
     background-color: #00cc5f;
 }
 
-.dark-accent, .dark-hover-accent:hover{
+.dark-accent, .dark-hover-accent:hover {
     color: #00a54d;
     background-color: #00a54d;
 }
 
-.dark-shade, .dark-hover-shade:hover{
+.dark-shade, .dark-hover-shade:hover {
     color: #010101;
     background-color: #010101;
 }
 
-.monochrome-c1, .monochrome-hover-c1:hover{
+.monochrome-c1, .monochrome-hover-c1:hover {
     color: #ffffff;
     background-color: #ffffff;
 }
@@ -157,25 +160,21 @@ body{
 /* end set main color */
 
 /* оформление кнопок */
-.button-primary{
+.button-primary {
     height: 170px;
     width: 60px;
 }
 
 .button-primary-lr {
-
 }
 
 .button-primary-md {
-
 }
 
 .button-primary-sm {
-
 }
 
 .main-button {
-
 }
 
 .text-white {
@@ -238,3 +237,197 @@ input[type="password"] {
     background-color: #ffffff;
     font-family: Rubik;
 }
+
+.body-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.main-img {
+    background-image: url(../images/9cf8e5102975b35cf3bca90d9a022d00.jpg);
+    background-color: #1A433B;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: block;
+    width: 100%;
+    opacity: 1;
+}
+
+/*@media only screen and (max-device-width: 1366px) {
+    .main-img {
+        background-attachment: scroll;
+    }
+}*/
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbars {
+    overflow: hidden;
+}
+
+    .navbars a {
+        float: left;
+        display: block;
+        margin-left: 150px;
+        margin-top: 54px;
+        margin-bottom: 74px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 24px;
+        height: 30px;
+    }
+
+        .navbars a.active {
+            border-bottom: 3px solid #00cc5f;
+        }
+
+        .navbars a:hover {
+            border-bottom: 3px solid #00cc5f;
+        }
+
+.card-container {
+    height: 318px;
+    width: 278px;
+    margin: 15px;
+    transition: transform .2s;
+}
+
+
+
+    .card-container:hover {
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+        transform: scale(1.05);
+    }
+
+        .card-container:hover .topleft {
+            width: 0px;
+        }
+
+        .card-container:hover .card-image {
+            -webkit-filter: grayscale(100);
+        }
+
+.card-image {
+    height: 148px;
+    width: 100%;
+    padding-left: 15px;
+    transition: -webkit-filter .2s;
+}
+
+.card-container div {
+}
+
+.topleft {
+    position: absolute;
+    top: 19px;
+    left: 0px;
+    width: 126px;
+    height: 33px;
+    text-align: center;
+    margin: 0px;
+    vertical-align: central;
+    padding: 0px;
+    visibility: visible;
+    -webkit-transition: width 1s;
+}
+
+@keyframes topleft-hiden {
+    from {
+        visibility: visible;
+    }
+
+    to {
+        visibility: hidden;
+    }
+}
+
+.center-pos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flex-centr {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 150px 150px 150px;
+    text-align: left;
+    /*border: 30px solid #00CC5F;*/
+}
+
+t1 {
+    color: #ffffff;
+    font-family: Rubik;
+    line-height: normal;
+    font-size: 64px;
+    text-wrap: none;
+}
+
+t2 {
+    color: #ffffff;
+    font-family: Rubik;
+    line-height: normal;
+    font-size: 30px;
+}
+
+.main-button {
+    width: 165px;
+    height: 50px;
+    margin: 30px;
+    border: solid;
+    border-color: #00CC5F;
+    color: white;
+    background: none;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: Rubik;
+    line-height: normal;
+    font-size: 18px;
+    padding: 10px;
+}
+
+    .main-button:hover {
+        background-color: #00CC5F;
+    }
+
+.navpanel {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 60px;
+    width: 100%;
+    height: 100px;
+    background: #ffffff;
+    padding: 25px;
+}
+
+    .navpanel p {
+        font-size: 21px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /*.navpanel div {
+        display: block;
+        float: left;
+        margin-left: 40px;
+        margin-right: 40px;
+    }*/
+
+    .navpanel input {
+        width: 486px;
+        height: 50px;
+        background: #f2f2f2;
+        border: none;
+    }

@@ -1,48 +1,81 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div class="w3-display-container">
-    <header class="w3-panel w3-center w3-opacity">
-        <h1>Header</h1>
-        <div class="w3-padding-32">
-            <div class="w3-bar">
-                <div class="w3-bar-item">
-
-                    <div class="w3-row-padding" style="margin-left:15%;">
-                        <div class=" w3-third">
-                            <div class="w3-card w3-grey">
-                                <div class="w3-display-container">
-                                    <img src="~/images/default-placeholder.png" alt="Light" style="width:100%" />
-                                    <div class="w3-padding w3-display-bottommiddle">
-                                        Провести занятие
-                                    </div>
-                                </div>
-                                <a asp-action="index" asp-controller="home" asp-area="cabinet" class="w3-button w3-block">Создание</a>
-                            </div>
-                        </div>
-
-                        <div class="w3-third w3-right" style="margin-right:15%;">
-                            <div class="w3-card w3-grey">
-
-                                <div class="w3-display-container">
-                                    <img src="~/images/default-placeholder.png" alt="Light" style="width:100%" />
-                                    <div class="w3-padding w3-display-bottommiddle">
-                                        Просмотр занятий
-                                    </div>
-                                </div>
-                                <a asp-action="viewer" asp-controller="home" class="w3-button w3-block">Просмотр</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+<div class="flex-col">
+    <div>
+        @{ await Html.RenderPartialAsync("_Menu");}
+    </div>
+    <div class="main-img">
+        <div class="flex-centr">
+            <div style="margin-top: 30px;">
+                <t1>
+                    Простой и удобный<br />
+                    сервис для трансляций
+                </t1>
+            </div>
+            <div style="margin-top: 90px;">
+                <t2>Начни свою запись или выбери интересный для себя эфир</t2>
+            </div>
+            <div>
+                <a href="#" class="main-button">начать запись</a>
+                <a href="#" class="main-button">смотреть</a>
             </div>
         </div>
-    </header>
-    <div class="w3-row-padding w3-center">
+    </div>
+    <div class="navbars">
+        <a class="active" href="#">Рекомендуемые</a>
+        <a href="#">Бесплатные интенсивы</a>
+    </div>
+    <div class="body-flex" style="margin: 0px 135px 0px 135px; flex-wrap:wrap;">
+
+        @*<div class="card-container w3-red">
+            <ul class="w3-light-blue">
+                <li class="w3-light-gray">img</li>
+                <li class="w3-light-green">
+                    Дом своими руками.<br />
+                    Фундамент. Часть 2.
+                </li>
+                <li class="w3-blue">Алексей Егоров</li>
+                <li class="w3-green">Date</li>
+            </ul>
+        </div>*@
+
+
+
+        @for (int i = 0; i <= 5; i++)
+        {
+            <div class="card-container flex-col">
+                <div style="position:relative">
+                    <img src="~/images/24de7ef147623bf3e25e99028c30d6ac.jpg" class="card-image" />
+                    <div class="topleft base-brand" style="padding-left: 0;">
+                        <p style="color: white; margin-top: 8px;">Через 23 ч 15 м</p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Дом своими руками.<br />
+                        Фундамент. Часть 2.
+                    </p>
+                </div>
+                <div>
+                    <p>Алексей Егоров</p>
+                </div>
+                <div>
+                    <p> Date</p>
+                </div>
+            </div>
+        }
+
+
+
+    </div>
+    
+</div>
+
+@*<div class="body-flex">
         <h3>Рекомендации</h3>
         @for (int i = 0; i <= 2; i++)
-    {
+        {
         <div class="w3-col s3">
             <div class="w3-card w3-grey w3-margin" style="width:100%;">
                 <div class="w3-display-container w3-text-white">
@@ -59,10 +92,10 @@
                 <a asp-action="roomdetails" asp-controller="home" class="w3-button w3-block w3-dark-gray">Подробнее</a>
             </div>
         </div>
-}
+        }
 
     </div>
-</div>
+                </div>*@
 
 @*<div class="w3-row-padding">
         @for (int i = 0; i <= 40; i++)

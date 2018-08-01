@@ -9,14 +9,21 @@
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 <body>
-    <div class="w3-content" style="max-width:2048px;">
-        @{ await Html.RenderPartialAsync("_Menu");}
         @RenderBody()
-        <hr />
-        <footer class="footer-bar monochrome-c2">
-            @*<p class="w3-text-white">&copy; 2018 - SibItProject</p>*@
-        </footer>
-    </div>
+    <footer class="footer-bar monochrome-c2">
+        <div class="w3-row">
+            <div class="w3-col l6 s6 m6">
+                <p> </p>
+            </div>
+            <div class="w3-col l6 s6 m6">
+                <a class="footer-link" href="#">Помощь</a>
+                <a class="footer-link" href="#">Отзывы</a>
+                <a class="footer-link" href="#">О проекте</a>
+                <a class="footer-link" href="#">Лицензия</a>
+                <a class="footer-link" href="#">Стать партнёром</a>
+            </div>
+        </div>
+    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
