@@ -1,0 +1,73 @@
+﻿@using speaklis_fullend.Areas.Cabinet.ViewModels
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Registration";
+}
+<div class="main-row" style="grid-template-rows: 100px 1fr 100px;">
+    <div>
+
+    </div>
+    <div class="main-column" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div>
+
+        </div>
+        <div>
+            <form asp-action="registration" asp-controller="home" asp-area="cabinet">
+                <span></span>
+                <div>
+                    <span asp-validation-for="Login"></span>
+                    <input asp-for="Login" placeholder="Имя пользователя" />
+                </div>
+                <div>
+                    <span asp-validation-for="Password"></span>
+                    <input asp-for="Password" placeholder="Пароль" />
+                </div>
+                <div>
+                    <span asp-validation-for="ConfirmPassword"></span>
+                    <input asp-for="ConfirmPassword" placeholder="Повторить пароль" />
+                </div>
+                <div>
+                    <span asp-validation-for="Email"></span>
+                    <input asp-for="Email" placeholder="E-mail" />
+                </div>
+                <div>
+                    <span asp-validation-for="Phone"></span>
+                    <input asp-for="Phone" placeholder="Номер телефона" />
+                </div>
+                <div>
+                    <span asp-validation-for="Name"></span>
+                    <input asp-for="Name" placeholder="Имя" />
+                </div>
+                <div>
+                    <span asp-validation-for="SurName"></span>
+                    <input asp-for="SurName" placeholder="Отчество" />
+                </div>
+                <div>
+                    <span asp-validation-for="SecondName"></span>
+                    <input asp-for="SecondName" placeholder="Фамилия" />
+                </div>
+                <div>
+                    <div class="w3-row">
+                        <div class="w3-col s6 m6 l6">
+                            <input class="w3-check" type="checkbox" />
+                        </div>
+                        <div class="w3-col s6 m6 l6">
+                            <a href="#" class="w3-text">text</a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="">Регистрация</button>
+            </form>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+
+
+

@@ -1,0 +1,50 @@
+﻿@using speaklis.Areas.Cabinet.ViewModels
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<br />
+<br />
+
+<div class="w3-row">
+    <div class="w3-col l4 w3-center">
+        <p></p>
+    </div>
+    <div class="w3-col l4 s12>
+        <div class="login-block w3-left">
+
+            <div class="w3-row">
+                <div class="w3-col l6 m6 s6" style="height: 70px; text-align:left; padding-top: 20px;">
+                    <h2 style="text-decoration: underline solid #00CC5F; font-family: Rubik; visibility:visible">Войти</h2>
+                </div>
+                <div class="w3-col l6 m6 s6" style="height: 70px;">
+                    <a href="#"><i class="fab fa-facebook fa-3x w3-right" style="color: #00CC5F; padding: 10px;"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-square fa-3x w3-right" style="color: #00CC5F; padding: 10px;"></i></a>
+                    <a href="#"><i class="fab fa-vk fa-3x w3-right" style="color: #00CC5F; padding: 10px;"></i></a>
+                </div>
+            </div>
+            <form asp-action="login" asp-controller="home" asp-area="cabinet" asp-anti-forgery="true">
+                <span class="validation" asp-validation-summary="ModelOnly"></span>
+                <div class="sib-container">
+                    <span asp-validation-for="Login"></span>
+                    <label class="">Email</label>
+                    <input asp-for="Login" class="w3-left" placeholder="Введите email" />
+                </div>
+                <div class="sib-container">
+                    <span asp-validation-for="Password"></span>
+                    <label class="">Пароль</label>
+                    <input type="password" asp-for="Password" class="" placeholder="Введите пароль" />
+                </div>
+                <div class="sib-container">
+                    <button type="submit" class="button-border w3-left">войти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="w3-col l4 w3-center">
+    <p></p>
+</div>
+</div>

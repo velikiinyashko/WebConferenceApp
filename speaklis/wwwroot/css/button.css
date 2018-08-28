@@ -1,0 +1,80 @@
+﻿body {
+}
+
+/* оформление кнопок */
+.btn-primary-default {
+    display: inline-block;
+    height: 60px;
+    width: 170px;
+    margin: 30px;
+    padding: 20px;
+    font-family: Rubik;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 17px;
+    color: var(--color-monochrome-c1);
+    background-color: var(--color-base-brand);
+    border-radius: 5px;
+}
+
+    .btn-primary-default:hover {
+        background: var(--color-dark-accent);
+    }
+
+.btn-primary-active {
+    display: inline-block;
+    height: 60px;
+    width: 170px;
+    margin: 30px;
+    padding: 20px;
+    font-family: Rubik;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 17px;
+    color: var(--color-base-brand);
+    background-color: none;
+    border: solid;
+    border-radius: 5px;
+    border-color: var(--color-base-brand);
+}
+
+.btn-secondary-default {
+    display: inline-block;
+    height: 60px;
+    width: 170px;
+    margin: 30px;
+    padding: 20px;
+    font-family: Rubik;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 17px;
+    color: var(--color-base-brand);
+    background-color: none;
+    border: solid;
+    border-radius: 5px;
+    border-color: var(--color-base-brand);
+}
+
+    .btn-secondary-default:hover {
+        border-color: var(--color-dark-accent);
+        color: var(--color-dark-accent);
+    }
+
+.btn-secondary-active {
+    display: inline-block;
+    height: 60px;
+    width: 170px;
+    margin: 30px;
+    padding: 20px;
+    font-family: Rubik;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 17px;
+    color: var(--color-monochrome-c1);
+    background-color: var(--color-dark-accent);
+    border-radius: 5px;
+}

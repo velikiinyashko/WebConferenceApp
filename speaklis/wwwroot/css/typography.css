@@ -1,0 +1,47 @@
+﻿h1 {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 64px;
+}
+
+h2 {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 30px;
+}
+
+h3 {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 24px;
+}
+
+h4 {
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 21px;
+}
+
+h5 {
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 18px;
+}
+
+h6 {
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+}

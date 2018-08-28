@@ -1,0 +1,37 @@
+﻿@using speaklis.Models
+@model Room
+@{
+    ViewData["Title"] = "ViewRoom";
+}
+
+<h2 class="w3-center">Лекция: @Model.Name</h2>
+
+<div class="w3-row">
+    <div class="w3-col l3 w3-green">
+        <div class="w3-container">
+            <label>Проводит:</label>
+            <label>@Model.Account.Name @Model.Account.SurName @Model.Account.SecondName</label>
+            <hr />
+            <label>Время начала</label>
+            <label>@Model.BegTime</label>
+        </div>
+    </div>
+    <div class="w3-col l6">
+        <div class="w3-container w3-center">
+            <div id="container">
+                <button class="w3-button w3-block w3-green" id="startButton">Запустить трансляцию</button>
+                <button class="w3-button w3-block w3-red" id="callButton">test</button>
+                <video id="videoStream" autoplay muted></video>
+
+                <div id="errorMsg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-col l3 w3-green">
+        <div class="w3-red w3-block w3-center">Чат</div>
+        <div class="w3-block w3-grey" style="height:100px;">История</div>
+        <input class="w3-input" />
+        <button class="w3-button w3-block w3-red">Отправить</button>
+    </div>
+</div>
+<button id="callButton" hidden></button>

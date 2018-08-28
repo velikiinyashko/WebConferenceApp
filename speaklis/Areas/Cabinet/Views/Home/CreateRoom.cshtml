@@ -1,0 +1,31 @@
+﻿@using speaklis.Models
+@model Room
+@{
+    ViewData["Title"] = "CreateRoom";
+}
+
+<br />
+<br />
+<div class="w3-row">
+    <div class="w3-col l3">
+        <p></p>
+    </div>
+    <div class="w3-col l6">
+
+        <div class="w3-card-4">
+            <h2 class="w3-red w3-center">Создание комнаты</h2>
+
+            <form asp-action="CreateRoom" asp-controller="home" asp-area="cabinet" asp-anti-forgery="true">
+                <input class="w3-input" asp-for="Name" placeholder="Название" />
+                <input class="w3-input" asp-for="BegTime" placeholder="Время" />
+                
+                <br />
+                <button class="w3-button w3-block w3-red" type="submit">Создать</button>
+            </form>
+        </div>
+    </div>
+    <div class="w3-col l3">
+        <p></p>
+    </div>
+</div>
+

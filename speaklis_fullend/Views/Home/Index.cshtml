@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="flex-col">
+    <div>
+        @{ await Html.RenderPartialAsync("_Menu");}
+    </div>
+    <div class="main-img">
+        <div class="flex-centr">
+            <div style="margin-top: 30px;">
+                <t1>
+                    Простой и удобный<br />
+                    сервис для трансляций
+                </t1>
+            </div>
+            <div style="margin-top: 90px;">
+                <t2>Начни свою запись или выбери интересный для себя эфир</t2>
+            </div>
+            <div>
+                <a asp-action="registration" asp-controller="home" asp-area="cabinet" class="btn-secondary-default">начать запись</a>
+                <a asp-action="recordpage" asp-controller="home" class="btn-secondary-default">смотреть</a>
+            </div>
+        </div>
+    </div>
+    <div class="navbars">
+        <a class="active" href="#">Рекомендуемые</a>
+        <a href="#">Бесплатные интенсивы</a>
+    </div>
+    <div class="body-flex" style="margin: 0px 135px 0px 135px; flex-wrap:wrap;">
+
+        @*<div class="card-container w3-red">
+            <ul class="w3-light-blue">
+                <li class="w3-light-gray">img</li>
+                <li class="w3-light-green">
+                    Дом своими руками.<br />
+                    Фундамент. Часть 2.
+                </li>
+                <li class="w3-blue">Алексей Егоров</li>
+                <li class="w3-green">Date</li>
+            </ul>
+        </div>*@
+
+
+
+        @for (int i = 0; i <= 5; i++)
+        {
+            <div class="card-container flex-col">
+                <div style="position:relative">
+                    <img src="~/images/24de7ef147623bf3e25e99028c30d6ac.jpg" class="card-image" />
+                    <div class="topleft base-brand" style="padding-left: 0;">
+                        <p style="color: white; margin-top: 8px;">Через 23 ч 15 м</p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        Дом своими руками.<br />
+                        Фундамент. Часть 2.
+                    </p>
+                </div>
+                <div>
+                    <p>Алексей Егоров</p>
+                </div>
+                <div>
+                    <p> Date</p>
+                </div>
+            </div>
+        }
+
+
+
+    </div>
+    
+</div>
+
+@*<div class="body-flex">
+        <h3>Рекомендации</h3>
+        @for (int i = 0; i <= 2; i++)
+        {
+        <div class="w3-col s3">
+            <div class="w3-card w3-grey w3-margin" style="width:100%;">
+                <div class="w3-display-container w3-text-white">
+                    <img src="~/images/default-placeholder.png" class="w3-opacity-max" alt="Light" style="width:100%;" />
+                    <div class="w3-padding w3-display-topleft">
+                        Тема: Тут тема @i<br />
+                        Дата: 14.04.2018<br />
+                        Стоимость: 200 <i class="fas fa-ruble-sign"></i>
+                    </div>
+                    <div class="w3-padding w3-display-bottomleft">
+                        Автор: Keily Wong
+                    </div>
+                </div>
+                <a asp-action="roomdetails" asp-controller="home" class="w3-button w3-block w3-dark-gray">Подробнее</a>
+            </div>
+        </div>
+        }
+
+    </div>
+                </div>*@
+
+@*<div class="w3-row-padding">
+        @for (int i = 0; i <= 40; i++)
+        {
+        <div class="w3-col s2">
+            <div class="w3-card w3-grey w3-margin" style="width:100%;">
+                <div class="w3-display-container w3-text-white">
+                    <img src="~/images/default-placeholder.png" class="w3-opacity-max" alt="Light" style="width:100%;" />
+                    <div class="w3-padding w3-display-topleft">
+                        Theme: The theme number @i
+                    </div>
+                    <div class="w3-padding w3-display-bottomleft">
+                        Autor: Keily Wong
+                    </div>
+                </div>
+                <button class="w3-button w3-block w3-dark-gray">Подробнее</button>
+            </div>
+        </div>
+        }
+
+    </div>*@

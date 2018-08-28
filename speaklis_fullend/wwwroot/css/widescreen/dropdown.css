@@ -1,0 +1,32 @@
+﻿@import url(template.css);
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    right: 0;
+    position: absolute;
+    padding: 10px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background: #f9f9f9;
+}
+
+    .dropdown-content a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+
+    }
+
+        .dropdown-content a:hover {
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

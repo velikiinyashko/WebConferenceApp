@@ -1,0 +1,40 @@
+﻿@using speaklis_fullend.Areas.Cabinet.ViewModels
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Вход";
+}
+<div class="main-row">
+    <div>
+
+    </div>
+    <div class="main-column">
+        <div>
+
+        </div>
+        <div>
+            <form asp-action="login" asp-controller="home" asp-area="cabinet" asp-anti-forgery="true">
+                <span class="validation" asp-validation-summary="ModelOnly"></span>
+                <div class="sib-container">
+                    <span asp-validation-for="Login"></span>
+                    <label class="">Email</label>
+                    <input asp-for="Login" class="w3-left" placeholder="Введите email" />
+                </div>
+                <div class="sib-container">
+                    <span asp-validation-for="Password"></span>
+                    <label class="">Пароль</label>
+                    <input type="password" asp-for="Password" class="" placeholder="Введите пароль" />
+                </div>
+                <div class="sib-container">
+                    <button type="submit" class="btn-primary-default">войти</button>
+                </div>
+            </form>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+

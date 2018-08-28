@@ -1,0 +1,25 @@
+﻿<div class="w3-container">
+    <div class="w3-row-padding">
+
+        @for (int i = 0; i <= 40; i++)
+    {
+        <div class="w3-col s3">
+            <div class="w3-card w3-grey w3-margin" style="width:100%;">
+                <div class="w3-display-container w3-text-white">
+                    <img src="~/images/default-placeholder.png" class="w3-opacity-max" alt="Light" style="width:100%;" />
+                    <div class="w3-padding w3-display-topleft">
+                        Тема: Тут тема @i<br />
+                        Дата: 14.04.2018<br />
+                        Стоимость: 200 <i class="fas fa-ruble-sign"></i>
+                    </div>
+                    <div class="w3-padding w3-display-bottomleft">
+                        Автор: Keily Wong
+                    </div>
+                </div>
+                <a asp-action="roomdetails" asp-controller="home" class="w3-button w3-block w3-dark-gray">Подробнее</a>
+            </div>
+        </div>
+}
+
+    </div>
+</div>

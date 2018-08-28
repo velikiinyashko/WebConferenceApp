@@ -1,0 +1,10 @@
+﻿.main-row {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+    .main-row .main-column {
+        display: grid;
+        grid-template-columns: 1fr 360px 1fr;
+        
+    }

@@ -1,0 +1,13 @@
+﻿:root {
+    --color-light-shade: #f9f9f9;
+    --color-light-accent: #19eb7b;
+    --color-base-brand: #00cc5f;
+    --color-dark-accent: #00a54d;
+    --color-dark-shade: #010101;
+    --color-monochrome-c1: #ffffff;
+    --color-monochrome-c2: #1a1b1b;
+    --color-monochrome-c3: #333333;
+    --color-monochrome-c4: #828282;
+    --color-monochrome-c5: #cdcdcd;
+    --color-input-background: #f2f2f2;
+}

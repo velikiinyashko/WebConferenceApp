@@ -1,0 +1,68 @@
+﻿@using speaklis.Areas.Cabinet.ViewModels
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<br />
+<br />
+<div class="w3-row">
+    <div class="w3-col l4"><p></p></div>
+    <div class="w3-col l4 w3-center">
+        <div class="w3-card-4">
+            <div class="w3-container w3-red">
+                <h2>Регистрация</h2>
+            </div>
+            <form asp-action="registration" asp-controller="home" asp-area="cabinet">
+                <span></span>
+                <br />
+                <div class="w3-container">
+                    <span asp-validation-for="Login"></span>
+                    <input class="w3-input w3-border-red" asp-for="Login" placeholder="Имя пользователя" />
+                </div>
+                <div class="w3-container">
+                    <span asp-validation-for="Password"></span>
+                    <input asp-for="Password" class="w3-input w3-border-red" placeholder="Пароль" />
+                </div>
+                <div class="w3-container">
+                    <span asp-validation-for="ConfirmPassword"></span>
+                    <input asp-for="ConfirmPassword" class="w3-input w3-border-red" placeholder="Повторить пароль" />
+                </div>
+                <div class="w3-container">
+                    <span asp-validation-for="Email"></span>
+                    <input asp-for="Email" class="w3-input w3-border-red" placeholder="E-mail" />
+                </div>
+                <div class="w3-container">
+                    <span asp-validation-for="Phone"></span>
+                    <input asp-for="Phone" class="w3-input w3-border-red" placeholder="Номер телефона" />
+                </div>
+                <div class="w3-container">
+                    <span asp-validation-for="Name"></span>
+                    <input asp-for="Name" class="w3-input" placeholder="Имя" />
+                </div>
+                <div class="w3-container">
+                    <span asp-validation-for="SurName"></span>
+                    <input asp-for="SurName" class="w3-input" placeholder="Отчество" />
+                </div>
+                <div class="w3-container">
+                    <span asp-validation-for="SecondName"></span>
+                    <input asp-for="SecondName" class="w3-input" placeholder="Фамилия" />
+                </div>
+                <div class="w3-container">
+                    <div class="w3-row">
+                        <div class="w3-col s6 m6 l6">
+                            <input class="w3-check" type="checkbox" />
+                        </div>
+                        <div class="w3-col s6 m6 l6">
+                            <a href="#" class="w3-text">text</a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="w3-button w3-block w3-red">Регистрация</button>
+            </form>
+        </div>
+    </div>
+    <div class="w3-col l4"><p></p></div>
+</div>
+

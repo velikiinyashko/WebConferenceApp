@@ -1,0 +1,38 @@
+﻿@import url(template.css);
+@import url(fonts.css);
+
+input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 24px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-right: 24px;
+    font-family: Rubik;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.checkbox {
+
+}
+
+.search {
+    height: 50px;
+    width: 486px;
+    outline: none;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 24px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-right: 24px;
+    font-family: Rubik;
+    font-size: 14px;
+    box-sizing: border-box;
+}
